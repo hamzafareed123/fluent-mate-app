@@ -7,6 +7,7 @@ FluentMate is a mobile app for practicing English. You can learn with daily less
 - Node.js and npm
 - Expo Go on your phone, or an Android/iOS simulator
 - A Supabase project for sign-in and app data
+- A Groq API key for AI features
 
 ## Get started
 
@@ -31,6 +32,22 @@ FluentMate is a mobile app for practicing English. You can learn with daily less
    ```
 
 5. Follow the terminal instructions to open the app on your phone or simulator.
+
+## Set up AI features
+
+The AI features run through Supabase Edge Functions and use Groq. Add your Groq API key as a Supabase secret named `GROQ_API_KEY`:
+
+```bash
+npx supabase secrets set GROQ_API_KEY=your-groq-api-key
+```
+
+Then deploy the Edge Functions from this project:
+
+```bash
+npx supabase functions deploy
+```
+
+Keep the Groq API key in Supabase. Do not put it in the app's `.env` file or commit it to GitHub.
 
 ## Useful commands
 
